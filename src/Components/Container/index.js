@@ -62,8 +62,8 @@ function container(){
                 tasks.map(e =>
                     <Tasks
                         key={e.id}
-                        t={e.task}
-                        s={remove}
+                        task={e.task}
+                        remove={remove}
                     />
                 )  
                }

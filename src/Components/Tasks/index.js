@@ -1,13 +1,13 @@
 import styles from './tasks.module.css';
 
-function tasks({t,s}){
+function tasks({task,remove}){
     return(
-        <div  className={styles.tasks} key={t}>
-            <p>{t}</p>
+        <div  className={styles.tasks} key={task}>
+            <p>{task}</p>
 
             <div>
                 <button>E</button>
-                <button onClick={(e)=> s(e)}>X</button>
+                <button onClick={(e)=> remove(e)}>X</button>
                 
             </div>
 
