@@ -4,14 +4,16 @@ import styles from './container.module.css';
 import Tasks from '../Tasks';
 
 
-function container(){
+function container({title}){
 
     const [mgs,setMgs] =useState("") ;
 
 
     const [tasks,setTasks] = useState([ {
         id:0,
-        task:"Comprar pão"
+        task:"Comprar pão",
+        status:0,
+        
     }]);
   
     const valication= (value)=>{
@@ -37,6 +39,7 @@ function container(){
         
 
            <section className={styles.card}>
+
                 <form >
                         <input 
                             type="text"
@@ -56,7 +59,10 @@ function container(){
                         </div>
                 </form>
 
-            <article>      
+
+            <article>   
+            <h2>{title}</h2>  
+ 
                {
 
                 tasks.map(e =>
@@ -65,6 +71,7 @@ function container(){
                         task={e.task}
                         remove={remove}
                     />
+
                 )  
                }
             </article>

@@ -11,26 +11,16 @@ function App() {
 
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
 
     <Box>
 
-      <Container />
-     
+      <Container title={"Não Feitas"} />
+      <Container title={"Em Andamento"} />
+      <Container  title={"Concluídas"}/>
+
     </Box>
       
-
-    {/* <Routes>
-      <Route 
-        path='/'
-        element={<Container />
-      
-      
-      }
-      />
-    </Routes> */}
-   
-
     </>
   );
 }
