@@ -1,20 +1,29 @@
 import styles from './tasks.module.css';
 
-function tasks({task,remove}){
+function tasks({task,remove, statusTask,status,id,edit}){
     return(
-        <div  className={styles.tasks} key={task}>
-            <p>{task}</p>
-
-            <div>
-                <button>E</button>
-                <button onClick={(e)=> remove(e)}>X</button>
+     <>
+        {
+            statusTask===status? 
+                <div  
                 
-            </div>
+                
+                className={styles.tasks} key={task}>
+                <p>{task}</p>
 
-       
-          
-        </div> 
-    )
+                <input type='hidden' value={id}/>
+
+                <div>
+                    <button onClick={(e)=> edit(e)}>E</button>
+                    <button onClick={(e)=> remove(e)}>X</button>
+                    
+                </div>  
+            </div> 
+            :null
+       }
+     
+     </>
+    );
 
 }
 
