@@ -9,8 +9,16 @@ import { useState } from 'react';
 function App() {
   const [edit,setEdit] =useState(false)
 
+  const [text,setText] = useState('');
+  const [idEdit,setIdEdit] = useState('');
+
  const isEdit = (e)=>{
-    console.log(e.target.parentNode.parentNode)
+  const taskEdit =e.target.parentNode.parentNode;
+    console.log(taskEdit);
+    const id = taskEdit.querySelector('._id');
+    const textContent = taskEdit.querySelector('p');
+    setIdEdit(id);
+    setText(textContent.textContent)
     setEdit(true)
  }
 
@@ -18,6 +26,7 @@ function App() {
   setEdit(false)
 
  }
+ 
 
   return (
     <>
@@ -30,7 +39,10 @@ function App() {
 
       {
         edit
-        ? <Edit felhar={felharEditor}/>
+        ? <Edit 
+          felhar={felharEditor}
+          text={text}
+        />
         : null
       }
 
